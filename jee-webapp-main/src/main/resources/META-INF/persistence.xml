@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0"
+    xmlns="https://jakarta.ee/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+	<!-- Define persistence unit -->
+	<persistence-unit name="JEE_DEMO_PU" transaction-type="JTA">
+		<!-- Define the class for EclipseLink which implements JPA -->
+	    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>jdbc/JEEDemoDB</jta-data-source>
+        
+		<!-- Discover local entities automatically -->
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+	</persistence-unit>
+	
+	<!-- Define the local persistence unit -->
+	<persistence-unit name="JEE_DEMO_PU_NON_JTA" transaction-type="RESOURCE_LOCAL">
+	    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+	</persistence-unit>
+</persistence>
