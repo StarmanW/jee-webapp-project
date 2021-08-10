@@ -1,13 +1,15 @@
 package com.starmanw.entity;
 
-import java.io.Serializable;
 import java.util.List;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.NamedQueries;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
@@ -18,7 +20,9 @@ import jakarta.persistence.Table;
 @Table(name = "STUDENT")
 @NamedQueries(value = {
 		@NamedQuery(name = Student.BY_STUDENT_ID, query = "SELECT s FROM Student s WHERE s.studentId=:studentId") })
-public class Student implements Serializable {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "CLASS_TYPE")
+public class Student extends AbstractEntityBase {
 	@Id
 	@Column(name = "STUDENT_KEY")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "STUDENT_GENERATOR")

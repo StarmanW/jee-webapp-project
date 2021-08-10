@@ -1,20 +1,24 @@
 package com.starmanw.entity;
 
-import java.io.Serializable;
 import java.util.List;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "COURSE")
-public class Course implements Serializable {
+@DiscriminatorColumn(name = "CLASS_TYPE")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class Course extends AbstractEntityBase {
 	@Id
 	@Column(name = "COURSE_KEY")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "COURSE_GENERATOR")
