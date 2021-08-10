@@ -1,4 +1,4 @@
-package com.starmanw.common.util.data;
+package com.starmanw.common.dataloader.data;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -42,8 +42,18 @@
 					<version>3.2.0</version>
 				</plugin>
 				<plugin>
-					<artifactId>maven-war-plugin</artifactId>
+       				<groupId>org.apache.maven.plugins</groupId>
+     				<artifactId>maven-war-plugin</artifactId>
 					<version>3.3.1</version>
+					<configuration>
+						<overlays>
+							<overlay>
+								<groupId>com.starmanw</groupId>
+								<artifactId>jee-webapp-web</artifactId>
+								<type>jar</type>
+							</overlay>
+						</overlays>
+					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-javadoc-plugin</artifactId>
@@ -59,14 +69,23 @@
 			<dependency>
 				<groupId>com.starmanw</groupId>
 				<artifactId>jee-webapp-main</artifactId>
-				<version>1.0.0-SNAPSHOT</version>
+				<version>${project.version}</version>
+				<type>jar</type>
 			</dependency>
 
 			<!-- Web Component -->
 			<dependency>
 				<groupId>com.starmanw</groupId>
 				<artifactId>jee-webapp-web</artifactId>
-				<version>1.0.0-SNAPSHOT</version>
+				<version>${project.version}</version>
+				<type>jar</type>
+			</dependency>
+
+			<!-- WAR Component -->
+			<dependency>
+				<groupId>com.starmanw</groupId>
+				<artifactId>jee-webapp-war</artifactId>
+				<version>${project.version}</version>
 				<type>war</type>
 			</dependency>
 		</dependencies>
@@ -132,7 +151,7 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.31</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -144,5 +163,6 @@
 	<modules>
 		<module>jee-webapp-main</module>
 		<module>jee-webapp-web</module>
+		<module>jee-webapp-war</module>
 	</modules>
 </project>

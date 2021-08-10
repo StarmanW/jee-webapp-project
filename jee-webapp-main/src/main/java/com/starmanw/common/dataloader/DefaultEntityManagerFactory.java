@@ -1,4 +1,4 @@
-package com.starmanw.common.util;
+package com.starmanw.common.dataloader;
 
 import static org.eclipse.persistence.config.PersistenceUnitProperties.DDL_DATABASE_GENERATION;
 import static org.eclipse.persistence.config.PersistenceUnitProperties.DDL_GENERATION;

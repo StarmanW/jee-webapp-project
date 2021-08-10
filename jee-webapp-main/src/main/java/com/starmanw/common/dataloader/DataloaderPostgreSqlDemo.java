@@ -1,8 +1,8 @@
-package com.starmanw.common.util;
+package com.starmanw.common.dataloader;
 
-import com.starmanw.common.util.data.CourseData;
-import com.starmanw.common.util.data.EnrollmentData;
-import com.starmanw.common.util.data.StudentData;
+import com.starmanw.common.dataloader.data.CourseData;
+import com.starmanw.common.dataloader.data.EnrollmentData;
+import com.starmanw.common.dataloader.data.StudentData;
 
 import jakarta.persistence.EntityManager;
 

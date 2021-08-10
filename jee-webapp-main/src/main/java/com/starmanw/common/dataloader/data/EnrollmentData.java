@@ -1,7 +1,7 @@
-package com.starmanw.common.util.data;
+package com.starmanw.common.dataloader.data;
 
-import static com.starmanw.common.util.data.CourseData.COURSES;
-import static com.starmanw.common.util.data.StudentData.STUDENTS;
+import static com.starmanw.common.dataloader.data.CourseData.COURSES;
+import static com.starmanw.common.dataloader.data.StudentData.STUDENTS;
 
 import java.util.ArrayList;
 import java.util.List;
